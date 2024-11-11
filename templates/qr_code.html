@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h3>Entre nessa jornada da TrilhaEdu! ❤️</h3>
+    </header>
+    <main>
+        <p>Use a câmera 📷 do seu aplicativo mobile para escanear o QR Code abaixo e faça parte dessa trilha!</p>
+        <img src="data:image/png;base64,{{ img_base64 }}" alt="QR Code">
+    </main>
+</body>
+</html>
