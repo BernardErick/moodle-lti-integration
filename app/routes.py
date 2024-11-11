@@ -22,6 +22,23 @@ def lti_receiver():
 def print_data():
     lti_data = request.form.to_dict()
     print("Dados LTI recebidos segunda vez:", lti_data)
+    
+    
+    user_id = lti_data.get("user_id")
+    resource_link_title = lti_data.get("resource_link_title")
+    oauth_consumer_key = lti_data.get("oauth_consumer_key")
+    lis_person_contact_email_primary = lti_data.get("lis_person_contact_email_primary")
+    ext_user_username = lti_data.get("ext_user_username")
+
+    # Dados LTI simulados
+    lti_data = {
+        "user_id": str(user_id),
+        "resource_link_title": str(resource_link_title),
+        "oauth_consumer_key": str(oauth_consumer_key),
+        "lis_person_contact_email_primary": str(lis_person_contact_email_primary),
+        "ext_user_username": str(ext_user_username)
+    }
+    
 
     qr_data = generate_qr_data(lti_data)
     img_base64 = create_qr_image(qr_data)
